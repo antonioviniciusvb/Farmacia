@@ -71,6 +71,10 @@ public class Produto {
 	@JsonIgnoreProperties("produto")
 	private Categoria categoria;
 
+	@ManyToOne
+	@JsonIgnoreProperties("produto")
+	private Usuario usuario;
+
 	public Produto(Long id, String nome, String descricao, BigDecimal preco, String marca, String fabricante,
 			LocalDate dataVencimento, String foto, Integer quantidade, Boolean retencao_receita) {
 		this.id = id;
@@ -174,6 +178,14 @@ public class Produto {
 
 	public void setCategoria(Categoria categoria) {
 		this.categoria = categoria;
+	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 
 }
